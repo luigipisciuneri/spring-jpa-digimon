@@ -25,7 +25,7 @@
 		<tr>
 			<td>${digimon.id}</td>
 			<td>${digimon.name}</td>
-			<td>${digimon.attaco}</td>
+			<td>${digimon.attacco}</td>
 			<td>${digimon.difesa }</td>
 			<td>${digimon.resistenza }</td>
 			<td>${digimon.evoluzione }</td>
