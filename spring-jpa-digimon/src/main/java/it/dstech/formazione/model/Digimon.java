@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Digimon {
@@ -16,6 +17,18 @@ public class Digimon {
 	private int difesa;
 	private int resistenza;
 	private String evoluzione;
+	//private String allenatore;
+	
+	@ManyToOne
+	private Allenatore Allenatore;
+
+	public Allenatore getAllenatore() {
+		return Allenatore;
+	}
+
+	public void setAllenatore(Allenatore allenatore) {
+		Allenatore = allenatore;
+	}
 
 	public Digimon() {
 	}
@@ -28,6 +41,7 @@ public class Digimon {
 		this.difesa = difesa;
 		this.resistenza = resistenza;
 		this.evoluzione = evoluzione;
+		
 	}
 
 	public int getId() {
