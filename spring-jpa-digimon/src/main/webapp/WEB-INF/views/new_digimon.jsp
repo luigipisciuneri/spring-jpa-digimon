@@ -33,10 +33,7 @@
 					<td>Evoluzione: </td>
 					<td><form:input path="evoluzione" /></td>
 				</tr>	
-				<tr>
-					<td>Allenatore: </td>
-					<td><form:input path="allenatore_id" /></td>
-				</tr>	
+	
 				<tr>
 					<td colspan="2"><input type="submit" value="Save"></td>
 				</tr>						

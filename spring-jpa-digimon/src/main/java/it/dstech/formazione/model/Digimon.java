@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -19,21 +20,16 @@ public class Digimon {
 	private String evoluzione;
 	//private String allenatore;
 	
-	@ManyToOne
+	@ManyToOne	
 	private Allenatore Allenatore;
 
-	public Allenatore getAllenatore() {
-		return Allenatore;
-	}
 
-	public void setAllenatore(Allenatore allenatore) {
-		Allenatore = allenatore;
-	}
 
 	public Digimon() {
 	}
 
-	public Digimon(int id, String name, int attacco, int difesa, int resistenza, String evoluzione) {
+	public Digimon(int id, String name, int attacco, int difesa, int resistenza, String evoluzione,
+			it.dstech.formazione.model.Allenatore allenatore) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,7 +37,16 @@ public class Digimon {
 		this.difesa = difesa;
 		this.resistenza = resistenza;
 		this.evoluzione = evoluzione;
-		
+		Allenatore = allenatore;
+	}
+
+
+	public Allenatore getAllenatore() {
+		return Allenatore;
+	}
+
+	public void setAllenatore(Allenatore allenatore) {
+		Allenatore = allenatore;
 	}
 
 	public int getId() {

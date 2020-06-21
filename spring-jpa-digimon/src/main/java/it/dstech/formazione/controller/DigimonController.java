@@ -22,8 +22,9 @@ public class DigimonController {
 
 	@Autowired
 	private DigimonService digimonService;
+	@Autowired
 	private AllenatoreService allenatoreService;
-	
+	/*
 	@RequestMapping("/")
 	public ModelAndView home() {
 		List<Digimon> listDigimon = digimonService.listAll();
@@ -33,7 +34,16 @@ public class DigimonController {
 	//	mav.addObject("listAllenatore", listAllenatore);
 		return mav;
 	}
-	
+	*/
+	@RequestMapping("/")
+	public ModelAndView home() {
+		//List<Digimon> listDigimon = digimonService.listAll();
+		//List<Allenatore> listAllenatore = allenatoreService.listAll();
+		ModelAndView mav = new ModelAndView("index");
+		mav.addObject("listDigimon", digimonService.listAll());
+	    mav.addObject("listAllenatore", allenatoreService.listAll());
+		return mav;
+	}
 
 	
 	
@@ -94,5 +104,28 @@ public class DigimonController {
 		allenatoreService.delete(id);
 		return "redirect:/";		
 	}
+	
+	/*
+	@RequestMapping("/addDigimon")
+	public String addDigimonForm(@RequestParam int id, Map<String, Object> model) {
+		Allenatore allenatore = allenatoreService.get(id);
+		List<Digimon> listaDigimon = digimonService.listAll();
+		
+		//model.put("allenatore", allenatore);
+		model.put("digimon", listaDigimon);
+		
+		return "scegliDigimon";
+	}
+	*/
+	
+	@RequestMapping("/addDigimon")
+	public ModelAndView assegnaDigimonForm(@RequestParam int id) {
+		ModelAndView model = new ModelAndView("scegliDigimon");
+		List<Digimon> listaDigimon = digimonService.listAll();
+		model.addObject("id", id);
+		model.addObject("lista", listaDigimon);
+		return model;
+	}
+	
 
 }

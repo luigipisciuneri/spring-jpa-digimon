@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import it.dstech.formazione.model.Allenatore;
 
-public interface DigimonRepositoryAl extends CrudRepository<Allenatore, Integer> {
+public interface AllenatoreRepository extends CrudRepository<Allenatore, Integer> {
 	
 
 }

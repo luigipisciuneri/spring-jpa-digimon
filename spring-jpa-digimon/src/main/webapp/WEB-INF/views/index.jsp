@@ -30,7 +30,7 @@
 			<td>${digimon.difesa }</td>
 			<td>${digimon.resistenza }</td>
 			<td>${digimon.evoluzione }</td>
-			<td>${digimon.allenatore } <td>
+			<td>${digimon.allenatore } </td>
 			<td>
 				<a href="edit?id=${digimon.id}">Edit</a>
 				&nbsp;&nbsp;&nbsp;
@@ -43,6 +43,7 @@
 	<br><br>
 	
 </div>	
+
 <br><br>
 <div align="center">
 	<h2>Gestione Allenatori</h2>
@@ -53,17 +54,18 @@
 			<th>nomeAllenatore</th>
 			<th>nomeDigimon</th>
 		</tr>
-		<c:forEach items="${listallenatori}" var="allenatori">
+		<c:forEach items="${listAllenatore}" var="allenatori">
 		<tr>
 			<td>${allenatori.id}</td>
 			<td>${allenatori.nomeAllenatore}</td>
-			<td>${allenatori.nomeDigimon}</td>
 			
 			<td>
-				<a href="edit?id=${allenatori.id}">Edit</a>
-				&nbsp;&nbsp;&nbsp;
-				<a href="delete?id=${allenatori.id}">Delete</a>
+			<td><a href="addDigimon?id=${allenatori.id}">Add Digimon</a>  
+						<a href="editAllenatore?id=${allenatori.id}">Edit</a><a
+						href="deleteAllenatore?id=${allenatori.id}">Delete</a></td>
 			</td>
+			
+		
 		</tr>
 		</c:forEach>
 	</table>

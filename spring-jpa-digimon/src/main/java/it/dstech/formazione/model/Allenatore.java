@@ -1,30 +1,74 @@
 package it.dstech.formazione.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Allenatore {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String nomeAllenatore;
-	private String nomeDigimon;
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Digimon> listaDigimon;
+
+  
 	
 	public Allenatore() {
+	
+		
 
 	}
 
-	public Allenatore(int id, String nomeAllenatore, String nomeDigimon) {
+
+
+
+
+
+
+	public Allenatore(int id, String nomeAllenatore, List<Digimon> listaDigimon) {
 		super();
 		this.id = id;
 		this.nomeAllenatore = nomeAllenatore;
-		this.nomeDigimon = nomeDigimon;
+		this.listaDigimon = listaDigimon;
 	}
+
+
+
+
+
+
+
+	public List<Digimon> getListaDigimon() {
+		return listaDigimon;
+	}
+
+
+
+
+
+
+
+	public void setListaDigimon(List<Digimon> listaDigimon) {
+		this.listaDigimon = listaDigimon;
+	}
+
+
+
+
+
+
 
 	public int getId() {
 		return id;
@@ -42,15 +86,11 @@ public class Allenatore {
 		this.nomeAllenatore = nomeAllenatore;
 	}
 
-	public String getNomeDigimon() {
-		return nomeDigimon;
-	}
 
-	public void setNomeDigimon(String nomeDigimon) {
-		this.nomeDigimon = nomeDigimon;
-	}
-	
-	
+
 	
 
+	
+
+	
 }
