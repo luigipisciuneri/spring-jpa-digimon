@@ -23,18 +23,9 @@ public class Allenatore {
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Digimon> listaDigimon;
 
-  
-	
-	public Allenatore() {
-	
-		
+	public Allenatore() {	
 
 	}
-
-
-
-
-
 
 
 	public Allenatore(int id, String nomeAllenatore, List<Digimon> listaDigimon) {
@@ -43,10 +34,6 @@ public class Allenatore {
 		this.nomeAllenatore = nomeAllenatore;
 		this.listaDigimon = listaDigimon;
 	}
-
-
-
-
 
 
 

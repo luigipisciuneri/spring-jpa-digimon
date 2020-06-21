@@ -117,15 +117,23 @@ public class DigimonController {
 		return "scegliDigimon";
 	}
 	*/
-	
+
 	@RequestMapping("/addDigimon")
-	public ModelAndView assegnaDigimonForm(@RequestParam int id) {
+	public ModelAndView assegnaDigimonForm(@RequestParam int id) { //@ModelAttribute("digimon") Digimon digimon
 		ModelAndView model = new ModelAndView("scegliDigimon");
 		List<Digimon> listaDigimon = digimonService.listAll();
-		model.addObject("id", id);
-		model.addObject("lista", listaDigimon);
+		System.out.println("Lista digimon "+listaDigimon );
+		System.out.println("Id allenatore "+id);
+		model.addObject("idAllenatore", id);
+		model.addObject("listaDigimon", listaDigimon);
+	 
+
 		return model;
 	}
 	
 
+
+	
+	
+	
 }

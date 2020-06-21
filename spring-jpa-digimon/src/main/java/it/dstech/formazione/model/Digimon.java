@@ -97,6 +97,12 @@ public class Digimon {
 		this.evoluzione = evoluzione;
 	}
 
+	@Override
+	public String toString() {
+		return "Digimon [id=" + id + ", name=" + name + ", attacco=" + attacco + ", difesa=" + difesa + ", resistenza="
+				+ resistenza + ", evoluzione=" + evoluzione + ", Allenatore=" + Allenatore + "]";
+	}
+
 
 
 }

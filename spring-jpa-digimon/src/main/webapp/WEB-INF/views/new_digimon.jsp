@@ -31,7 +31,15 @@
 				</tr>
 					<tr>
 					<td>Evoluzione: </td>
-					<td><form:input path="evoluzione" /></td>
+				<!--  	<td><form:input path="evoluzione" /></td>-->
+				<td>
+			    <select name='Evoluzione'>
+			        <option value='BASICA'>BASICA</option>
+			        <option value='DIGIEVOLUZIONE'>DIGIEVOLUZIONE</option>
+			        <option value='MEGA_DIGIEVOLUZIONE'>MEGA_DIGIEVOLUZIONE</option>
+			        <option value='ULTRA_DIGIEVOLUZIONE'>ULTRA_DIGIEVOLUZIONE</option>
+			    </select> 
+			   </td>
 				</tr>	
 	
 				<tr>

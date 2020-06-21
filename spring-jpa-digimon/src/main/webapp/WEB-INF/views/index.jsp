@@ -29,8 +29,9 @@
 			<td>${digimon.attacco}</td>
 			<td>${digimon.difesa }</td>
 			<td>${digimon.resistenza }</td>
-			<td>${digimon.evoluzione }</td>
+			<td>${digimon.evoluzione }</td> 
 			<td>${digimon.allenatore } </td>
+			
 			<td>
 				<a href="edit?id=${digimon.id}">Edit</a>
 				&nbsp;&nbsp;&nbsp;
